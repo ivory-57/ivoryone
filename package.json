@@ -1,0 +1,12 @@
+{
+  "name": "naigai-desktop-pet",
+  "version": "0.1.0",
+  "description": "奶盖：一只粘人又有点傲娇的 macOS 桌面电子宠物",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "devDependencies": {
+    "electron": "^32.1.2"
+  }
+}

@@ -1,0 +1,24 @@
+:root { color-scheme: light; font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", sans-serif; }
+* { box-sizing: border-box; }
+body { margin: 0; overflow: hidden; background: transparent; user-select: none; }
+.pet { position: relative; width: 360px; height: 420px; }
+.bubble { position: absolute; top: 28px; left: 50%; transform: translateX(-50%); padding: 9px 14px; border-radius: 16px; background: rgba(255,255,255,.9); color: #685d68; font-size: 14px; box-shadow: 0 5px 18px rgba(80,70,70,.12); opacity: 0; transition: opacity .2s; }
+.bubble.visible { opacity: 1; }
+.cat { position: absolute; left: 70px; top: 105px; width: 220px; height: 230px; border: 0; background: transparent; cursor: pointer; filter: drop-shadow(0 14px 10px rgba(86,76,73,.2)); animation: idle 3.2s ease-in-out infinite; }
+.head { position: absolute; left: 38px; top: 10px; width: 145px; height: 130px; border-radius: 48% 48% 45% 45%; background: radial-gradient(circle at 38% 30%, #fff, #e9e8e6 72%, #b8b9bc); z-index: 3; }
+.ear { position: absolute; top: 0; width: 55px; height: 65px; background: #d7d7d8; clip-path: polygon(50% 0,100% 88%,0 88%); z-index: 2; }
+.ear:after { content: ''; position: absolute; inset: 13px 15px 12px; background: #e8cfd0; clip-path: inherit; }
+.ear.left { left: 40px; transform: rotate(-15deg); }.ear.right { left: 132px; transform: rotate(15deg); }
+.eye { position: absolute; top: 50px; width: 24px; height: 30px; border-radius: 50%; background: radial-gradient(circle at 40% 35%, #fff 0 8%, #86b6e8 10% 42%, #234b86 55%, #17151c 70%); transform-origin: center; }
+.eye.left { left: 35px; }.eye.right { right: 35px; }
+.nose { position: absolute; left: 65px; top: 84px; width: 16px; height: 11px; border-radius: 60% 60% 55% 55%; background: #836f72; }
+.mouth { position: absolute; left: 70px; top: 95px; width: 7px; height: 12px; border-left: 2px solid #75676b; border-bottom: 2px solid #75676b; transform: rotate(-45deg); }
+.body { position: absolute; left: 25px; top: 105px; width: 175px; height: 115px; border-radius: 48% 48% 35% 35%; background: linear-gradient(120deg, #f9f9f8, #c6c7c9); z-index: 1; }
+.tail { position: absolute; right: 0; top: 143px; width: 85px; height: 42px; border-radius: 50%; border: 20px solid #aeb0b5; border-left-color: transparent; transform: rotate(-14deg); transform-origin: left center; z-index: 0; animation: tail-sway 2.4s ease-in-out infinite; }
+.cat:active { transform: translateY(4px) scale(.98); }.cat.happy .head { animation: bounce .55s ease; }
+@keyframes idle { 0%, 100% { transform: translateY(0) rotate(0); } 50% { transform: translateY(-4px) rotate(-1deg); } }
+@keyframes tail-sway { 0%, 100% { transform: rotate(-14deg); } 50% { transform: rotate(12deg); } }
+@keyframes blink { 0%, 42%, 46%, 100% { transform: scaleY(1); } 44% { transform: scaleY(.08); } }
+@keyframes bounce { 50% { transform: translateY(-9px) rotate(-2deg); } }
+.eye { animation: blink 5.5s ease-in-out infinite; }.eye.right { animation-delay: .08s; }
+.status { position: absolute; bottom: 36px; left: 50%; transform: translateX(-50%); display: flex; gap: 12px; color: #756b72; font-size: 12px; white-space: nowrap; }
